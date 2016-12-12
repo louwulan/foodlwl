@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<title>搜索</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Fly High Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<script src="jquery/jquery.min.js"></script>
+<script src="js/arg-1.3.js"></script>
+
+</head>
+<body>
+	<section class="top">
+	<article class="topWrpper">
+		<img src="images/logo.png"/>
+		<nav>
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="#">地区</a></li>
+				<li><a href="#">网站推荐</a></li>
+				<li><a href="#">热门</a></li>
+				<li class="login"><a href="login1.html" id="mm">登录</a></li>
+        <li id="wel"></li>
+				<li class="zhu"><a href="register.html">注册</a></li>
+			</ul>
+		</nav>
+		<!-- search-scripts -->
+	</article>
+</section>
+<section id="home" class="banner"></section>
+<section class="bannerFont"><p>Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero mal suada
+feugiat. Curabitur aliquet quam uis lorem</p></section>
+<div class="sou_search">
+      <input id="search" class="ss_search" type="text">
+      <button id="button" class="ss_but" type="button" value="搜索">搜索</button>
+</div>
+<section id="list" class="xiang">
+  
+</section>
+</body>
+
+<script src="js/js.cookie-2.1.0.min.js"></script>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="layer/layer.js"></script> -->
+<script src="js/arg-1.3.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>   
+<script>
+   function buttonStatus(){
+	var a=$('#search').val();
+	console.log(a);
+	var flag=1;
+	console.log(flag);
+	if(!a){
+		flag=0;
+	}
+	console.log(flag);
+	if(flag==1){
+		$('#submit').attr('disabled',flase)
+	}
+	else{
+	    $('#submit').attr('disabled',true)
+	}
+   }
+   $function(){
+	$('#search').on('blur',function(){
+		buttonStatus()
+	})
+	$('#search').on('keyup',function(){
+		buttonStatus()
+	})
+   })
+</script>
+<script id="tem" type="text/x-handlebars-template">
+  {{#each wad}}
+   <div class="col-lg-8">
+  	<div class="panel">
+    <img src="{{pic_1}}"/>
+    <ul>
+      <li>
+         <a href="hongrou.html?id={{id}}">
+        {{name}}
+        </a>
+      </li>
+      <li><p>{{taste}}</p></li>
+      <li><p>{{propose}}</p></li>
+      <li><p>{{area}}</p></li>
+    </ul>   
+    </div>
+    </div>
+    {{/each}}
+ </script>
+
+<script type="text/javascript">
+	$(function(){
+    var s=Arg('search');
+    console.log(s);
+    var pp=document.getElementById('search');
+    pp.value =s;
+    if(s){
+        $.ajax({
+          url:'wad/search',
+          method:'post',
+          data: {search:s},
+          dataType:'json',
+          success:function(data,status,xhr){
+            var source = $('#tem').html();
+            var template = Handlebars.compile(source);
+            var da = {'wad': data};
+            $('#list').html(template(da));
+          },
+          error:function(xhr,status,error){
+            console.log(error);
+          }
+        });
+      } 
+  });       
+  $(function(){
+  $('#button').on('click', function () {
+    $.ajax({
+      url:'wad/search',
+      method:'post',
+      data: {search: $('#search').val()},
+      dataType:'json',
+      success:function(data,status,xhr){
+        var source = $('#tem').html();
+        var template = Handlebars.compile(source);
+        var da = {'wad': data};
+        $('#list').html(template(da));
+      },
+      error:function(xhr,status,error){
+        console.log(error);
+      }
+   	 });
+  	});
+	});
+</script>
+<script type="text/javascript">
+        document.getElementById('mm').innerText=
+                Cookies.get('user');
+       if(Cookies.get('user')){
+            document.getElementById('wel').innerHTML='欢迎回来!';
+        }
+</script> 
+</html>

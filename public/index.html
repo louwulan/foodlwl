@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+<head>
+<title>index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Fly High Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/layout.css"/>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<script src="jquery/jquery.min.js"></script>
+<script src="js/js.cookie-2.1.0.min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+</head>
+<body>
+<section class="top">
+	<article class="topWrpper">
+		<img src="images/logo.png"/>
+		<nav>
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="#Portfolio">地区</a></li>
+				<li><a href="#services">网站推荐</a></li>
+				<li><a href="#about">热门</a></li>
+				<li class="login"><a href="login1.html" id="mm">登录</a></li>
+				<li id="wel"></li>
+				<li class="zhu"><a href="register.html">注册</a></li>
+			</ul>
+		</nav>
+		<section class="search">
+			<div class="sb_search">
+				<form>
+					<input class="s_input" type="text" id="search"/>
+					<button id="submit" class="s_search" type="submit" value="">搜索</button>
+				</form>
+			</div>
+		</section>		
+		<script>
+			$('#submit').on('click',function(){
+				$.ajax({
+					url:'wad/search/counter',
+					type:'post',
+					dataType:'json',
+					data:{search:$('#search').val()},
+					success:function(data,status,xhr){
+						console.log('aaa')
+						if(data.counter==1){
+							window.location.href='hongrou.html?id='+data.id
+						}
+						else if(data.counter>1){
+							window.location.href='sou.html?search='+$('#search').val()
+								
+						}
+						else{alert('');}
+					},
+					error:function(XHR,status,error){
+						console.log(error);
+					}
+				});
+			});
+		</script>
+	</article>
+</section>
+<section id="home" class="banner"></section>
+<section class="bannerFont"><p>Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero mal suada
+feugiat. Curabitur aliquet quam uis lorem</p></section>
+<section id="Portfolio" class="Portfolio">
+	<h1>地区</h1>
+	<div class="pcontainer">
+	<div class="row">
+		<div class="col-lg-3">
+			<div class="imgbWrpper">
+				<img src="images/cai/lucai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>鲁菜</h4>
+					<p>鲜香脆嫩，突出原味，咸鲜为主</p>
+					<span>230</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-lg-offset-1">
+			<div class="imgbWrpper">
+				<img src="images/cai/chuancai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>川菜</h4>
+					<p>调味多变，菜式多样，以善用麻辣调味著称</p>
+					<span>336</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-lg-offset-1">
+			<div class="imgbWrpper">
+				<img src="images/cai/yuecai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>粤菜</h4>
+					<p>质地鲜嫩，口味清鲜常新</p>
+					<span>237</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="imgbWrpper">
+				<img src="images/cai/mincai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>闽菜</h4>
+					<p>清爽，鲜嫩，淡雅，汤菜居多</p>
+					<span>237</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-lg-offset-1">
+			<div class="imgbWrpper">
+				<img src="images/cai/sucai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>苏菜</h4>
+					<p>口味清鲜，咸中稍甜，注重本味</p>
+					<span>237</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-lg-offset-1">
+			<div class="imgbWrpper">
+				<img src="images/cai/zhecai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>浙菜</h4>
+					<p>酱香味浓，制作精致</p>
+					<span>237</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="imgbWrpper">
+				<img src="images/cai/xiangcai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>湘菜</h4>
+					<p>重油，重盐，重辣，腌制醋味</p>
+					<span>336</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-lg-offset-1">
+			<div class="imgbWrpper">
+				<img src="images/cai/huicai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>徽菜</h4>
+					<p>汤汁厚重，味鲜浓郁</p>
+					<span>336</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-lg-offset-1">
+			<div class="imgbWrpper">
+				<img src="images/cai/dongbeicai.jpg"/>
+				<div class="imgbWrppertop">
+					<h4>东北菜</h4>
+					<p>一菜多味，咸甜分明</p>
+					<span>336</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="donec-text">
+		<p>中国餐饮文化历史悠久，菜肴在烹饪中有许多流派，经历历代名厨传承至今，形成各具特色菜系 
+			<span>各地方菜系代表各地色，香，味，形俱佳的特色烹饪技艺</span>
+		</p>
+	</div>
+</section>
+<section id="about" class="about">
+	<div class="acontainer">
+		<h1>热门</h1>
+		<div class="row">
+			<div class="col-lg-3">
+				<img id="rpic_10" src="" alt=" " />
+				<div class="about-grid-john">
+					<div class="john">
+						<h4 id="rname0"></h4>
+						<p id="ralias0"></p>
+					</div>
+					<div class="clear"> </div>
+					<p id="rintro0" class="para"></p>
+					<div class="hello">
+						<a href="" id="rerji0">Learn More</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-lg-offset-1">
+					<img id="rpic_11"src="" alt=" " />
+					<div class="about-grid-john">
+					<div class="john">
+						<h4 id="rname1"></h4>
+						<p id="ralias1"></p>
+					</div>
+					<div class="clear"> </div>
+					<p id="rintro1" class="para"></p>
+					<div class="hello">
+						<a href="" id="rerji1">Learn More</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-lg-offset-1">
+				<img id="rpic_12" src="" alt=" " />
+				<div class="about-grid-john">
+					<div class="john">
+						<h4 id="rname2"></h4>
+						<p id="ralias2"></p>
+					</div>
+					<div class="clear"> </div>
+					<p id="rintro2" class="para"></p>
+					<div class="hello">
+						<a href="" id="rerji2">Learn More</a>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+</section>
+<section id="services" class="services">
+	<div class="swrpper">
+		<div class="scontain">
+		<h3>网站推荐</h3>
+		<div class="row">
+			<div class="col-lg-3 col-lg-offset-1">
+				<h4 id="name0"></h4>
+				<img src="" id="pic_10" alt=""/>
+				<p id="taste0"></p>
+				<div class="learn">
+						<a href="" id="erji0">Learn More</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-lg-offset-3">
+				<h4 id="name1"></h4>
+				<img src="" id="pic_11" alt=""/>
+				<p id="taste1"></p>
+				<div class="learn">
+						<a href="" id="erji1">Learn More</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-lg-offset-1">
+				<h4 id="name2"></h4>
+				<img src=""  id="pic_12" alt=""/>
+				<p id="taste2"></p>
+				<div class="learn">
+						<a href="" id="erji2">Learn More</a>
+				</div>
+			</div>
+			<div class="col-lg-2 col-lg-offset-3">
+				<h4 id="name3"></h4>
+				<img src=""  id="pic_13" alt=""/>
+				<p id="taste3"></p>
+				<div class="learn">
+						<a href="" id="erji3">Learn More</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-lg-offset-1">
+				<h4 id="name4"></h4>
+				<img src=""  id="pic_14" alt=""/>
+				<p id="taste4"></p>
+				<div class="learn">
+						<a href="" id="erji4">Learn More</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-lg-offset-3">
+				<h4 id="name5"></h4>
+				<img src=""  id="pic_15"alt=""/>
+				<p id="taste5"></p>
+				<div class="learn">
+						<a href="" id="erji5">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+<section id="season" class="season">
+	<h1>季节</h1>
+	<div class="snwrpper">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2">
+					<div class="spring"><img src="images/season/xunyicao.jpg"/></div>
+					<div class="more">
+						<a href="" id="">Learn More</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-lg-offset-4">
+					<div class="spring"><img src="images/season/xia.jpg"/></div>
+					<div class="more">
+						<a href="" id="">Learn More</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+					<div class="spring"><img src="images/season/qiu.jpg"/></div>	
+					<div class="more">
+						<a href="#" id="">Learn More</a>
+					</div>
+				</div>										
+				<div class="col-lg-2 col-lg-offset-4">
+					<div class="spring"><img src="images/season/xunyicao.jpg"/></div>
+					<div class="more">
+						<a href="#" id="">Learn More</a>
+					</div>
+				</div>	
+			</div>			
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+<section id="contact" class="contact">
+        <h1>Contact</h1>
+        <form>
+            <input type="text" value="Name" class="name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}"/>
+            <input type="text" value="Email" class="email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}"/>
+            <textarea type="text" class="message" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Message';}" requirde="">Message</textarea>
+            <span><input type="submit" class="mybutton" value="Submit"></span>
+        </form>
+ </section>
+<a href="#" id="toTop">
+	<span id="toTopHover"></span>
+</a>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url:'wad/recommand/6',
+			method:'get',
+			dataType:'json',
+			success:function(data,status,xhr){
+				console.log(data);
+				for(i=0;i<data.length;i++){
+					$('#name'+i).text(data[i].name);
+					$('#alias'+i).text(data[i].alias);
+					$('#taste'+i).text(data[i].taste);
+					$('#propose'+i).text(data[i].propose);
+					$('#erji'+i).attr('href','hongrou.html?id='+data[i].id);
+					$('#pic_1'+i).attr('src',data[i].pic_1);
+				}
+			},
+			error:function(xhr,status,error){
+				console.log(error);
+			}
+		})
+		$.ajax({
+			url:'wad/popular/3',
+			method:'get',
+			dataType:'json',
+			success:function(data,status,xhr){
+				console.log(data);
+				for(i=0;i<data.length;i++){
+					$('#rname'+i).text(data[i].name);
+					$('#ralias'+i).text(data[i].alias);
+					$('#rtaste'+i).text(data[i].taste);
+					$('#rpropose'+i).text(data[i].propose);
+					$('#rerji'+i).attr('href','hongrou.html?id='+data[i].id);
+					$('#rpic_1'+i).attr('src',data[i].pic_1);
+				}
+			},
+			error:function(xhr,status,error){
+				console.log(error);
+			}
+		})
+	})
+</script>
+<script type="text/javascript">
+        document.getElementById('mm').innerText=
+                Cookies.get('user');
+       if(Cookies.get('user')){
+            document.getElementById('wel').innerHTML='欢迎回来!';
+        }
+</script>
+</html>
+					
+					

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>注册</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+body{width:1280px;height:1200px;font-family:"黑体";overflow:hidden;position:absolute;top:0;left:50%;margin-left:-640px;}
+.wrpper{width:100%;height:100%;margin-top:0;background:url(images/bg.jpg)no-repeat;}
+.con{width:1280px;height:860px;position:relative;left:50%;margin-left:-640px;background:rgba(238,238,238, .5);}
+.con h1{width:300px;height:50px;color:#fff;text-align:center;line-height:50px;border-radius:5px;font-size:60px;letter-spacing:25px;position:relative;top:15%;top:5%;left:50%;margin-left:-150px;}
+.cwrpper{width:460px;height:400px;position:relative;left:50%;top:130px;margin-left:-210px;padding-top:30px;background:rgba(248,86,93,0.8);border-radius:15px;}
+.cwrpper p{font-size:20px;padding: 25px 30px;line-height:35px;color:#fff;}
+.cwrpper input{width:240px;height:35px;font-size:20px;color:#222222;border:1px solid #dedede;float:right;margin-right:20px;border-radius:6px;}
+#tijiao{width:200px;height:40px;color:#f8565d;float:left;margin:20px 100px;border-radius:6px;border-width:0px;background:#eee;}
+
+
+</style>
+<script src="js/data.user.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var c='';
+	var d='';
+	var e='';
+	function foo(){
+		c=document.getElementById('name').value;
+		d=document.getElementById('pass').value;
+		e=document.getElementById('copy').value;
+		if(c==''||d==''||e==''){
+			alert('请将信息填完整');
+			return;
+		}
+		for(var i=0;i< r.length;i++){
+			if(r[i].name==c){
+				f=1;
+				break;
+			}
+			else{
+				f=0;
+			}
+		}
+		if(f==1){
+			alert('账户存在');
+		}
+		else{
+			if(d!=e){
+				alert('密码不一致');
+				return;
+			}
+
+			else{
+				alert('注册成功')
+				window.location.href='login.html';
+			}
+		}/**/
+	}
+
+</script>
+</head>
+<body>
+<article>
+	<div class="wrpper">
+		<div class="con">
+			<h1>注册</h1>
+			<div  class="cwrpper" action="login.html" methon="get">
+				<p>&nbsp;&nbsp;用户名：<input type="text" name="name1" id="name" value="用户名" onfocus="if (value =='用户名'){value =''}" onblur="if (value ==''){value='用户名'}" /></p>
+				<p>&nbsp;&nbsp;新密码：<input type="password" name="password" id="pass" value="密码" onfocus="if (value =='密码'){value =''}" onblur="if (value ==''){value='密码'}" /></p>
+				<p>重复密码：<input type="password" name="password1" id="copy" value="密码" onfocus="if (value =='密码'){value =''}" onblur="if (value ==''){value='密码'}"/></p>
+				<p><input type="submit"title="提交" id="tijiao" onclick="foo()"></p>
+			</div>
+		</div>
+	</div>
+</article>	
+</body>
+</html>
